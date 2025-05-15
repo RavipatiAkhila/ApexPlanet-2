@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact & To-Do Manager</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <h1>My Web App</h1>
+    <nav>
+      <a href="#contact">Contact</a>
+      <a href="#todo">To-Do List</a>
+    </nav>
+  </header>
+
+  <main class="content">
+    <!-- Contact Form Section -->
+    <section id="contact" class="card">
+      <h2>Contact Us</h2>
+      <form id="contactForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required />
+
+        <label for="contact">Contact Number:</label>
+        <input type="tel" id="contact" pattern="[0-9]{10}" required placeholder="e.g. 9876543210" />
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" required />
+
+        <!-- Gender Dropdown -->
+<label for="gender">Gender:</label>
+<select id="gender" required>
+  <option value="">Select Gender</option>
+  <option value="Male">Male</option>
+  <option value="Female">Female</option>
+  <option value="Other">Other</option>
+</select>
+
+<!-- Contact Method Dropdown -->
+<label for="contactMethod">Preferred Contact Method:</label>
+<select id="contactMethod" required>
+  <option value="">Select Contact Method</option>
+  <option value="Email">Email</option>
+  <option value="Phone">Phone</option>
+  <option value="WhatsApp">WhatsApp</option>
+</select>
+
+        </div>
+
+        <label for="country">Country:</label>
+        <select id="country" required>
+          <option value="">Select Country</option>
+          <option>India</option>
+          <option>USA</option>
+          <option>UK</option>
+          <option>Australia</option>
+        </select>
+
+        <label for="subject">Subject:</label>
+        <select id="subject" required>
+          <option value="">Select Subject</option>
+          <option>Feedback</option>
+          <option>Support</option>
+          <option>Sales Inquiry</option>
+        </select>
+
+        
+
+        <label for="message">Message:</label>
+        <textarea id="message" required></textarea>
+
+        <button type="submit">Send</button>
+      </form>
+    </section>
+
+    <!-- To-Do List Section -->
+    <section id="todo" class="card">
+      <h2>To-Do List</h2>
+      <input type="text" id="taskInput" placeholder="Task Title" required />
+
+      <label for="description">Description:</label>
+      <textarea id="description" placeholder="Task Details"></textarea>
+
+      <label for="priority">Priority:</label>
+      <select id="priority">
+        <option value="Low">Low</option>
+        <option value="Medium" selected>Medium</option>
+        <option value="High">High</option>
+      </select>
+
+      <label for="dueDate">Due Date:</label>
+      <input type="date" id="dueDate" />
+
+      <button onclick="addTask()">Add Task</button>
+      <ul id="taskList"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
