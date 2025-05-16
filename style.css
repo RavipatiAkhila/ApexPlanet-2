@@ -12,26 +12,43 @@ body {
   color: #fff;
   padding: 1rem 2rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+}
+
+.navbar h1 {
+  flex-basis: 100%;
+  text-align: center;
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.navbar nav {
+  margin-top: 0.5rem;
 }
 
 .navbar nav a {
   color: #fff;
-  margin-left: 1rem;
+  margin: 0 1rem;
   text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background 0.3s;
 }
 
-.navbar nav a:hover {
-  text-decoration: underline;
+.navbar nav a:hover,
+.navbar nav a.active {
+  background-color: #1565c0;
 }
 
 /* Layout */
 .content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
   padding: 2rem;
+  min-height: 80vh;
 }
 
 /* Cards */
@@ -40,6 +57,14 @@ body {
   border-radius: 12px;
   padding: 2rem;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 600px;
+  display: none; /* hidden by default */
+}
+
+/* Show active tab */
+.card.active {
+  display: block;
 }
 
 /* Form Elements */
@@ -73,14 +98,6 @@ button:hover {
   background-color: #1565c0;
 }
 
-/* Gender & Contact Method Styles */
-.gender-options,
-.contact-methods {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
 /* To-Do List */
 #taskList {
   list-style: none;
@@ -105,16 +122,14 @@ button:hover {
 @media (max-width: 600px) {
   .navbar {
     flex-direction: column;
-    align-items: start;
-  }
-
-  .navbar nav {
-    margin-top: 0.5rem;
+    align-items: center;
   }
 
   .navbar nav a {
-    display: inline-block;
-    margin-left: 0;
-    margin-right: 1rem;
+    margin: 0.25rem 0.5rem;
+  }
+
+  .content {
+    padding: 1rem;
   }
 }
